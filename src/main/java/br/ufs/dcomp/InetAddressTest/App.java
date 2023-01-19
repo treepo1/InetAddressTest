@@ -12,10 +12,14 @@ public class App
     {
         try{
             
-            String name = "www.ufs.br";
-            InetAddress address = InetAddress.getByName(name); 
+            String name = "google.com";
+            InetAddress addresses[] = InetAddress.getAllByName(name); 
             System.out.println( "Name:      "+ name);
-            System.out.println( "Address:   "+ address.getHostAddress());
+            for (int i = 0; i < addresses.length; i++) {
+                System.out.println( "Address:   "+ addresses[i].getHostAddress());
+            };
+            
+ 
 
         } catch (UnknownHostException e){
             System.out.println(e.getMessage());
